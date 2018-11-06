@@ -1,0 +1,14 @@
+.btn {
+    border: none;
+    background: #ddd;
+    padding: .5rem 2rem;
+    color: #333;
+    cursor: pointer;
+    transition: all 300ms ease;
+    margin: .5rem;
+    &:hover {
+        // background: #333;
+        // color: #ddd;
+        transform: scale(1.1);
+    }
+}

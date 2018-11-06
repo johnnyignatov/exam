@@ -1,0 +1,16 @@
+.positioning {
+    display: flex;
+    flex-wrap: wrap;
+    & span {
+        flex-basis: calc(50% - 2rem);
+        padding: 1rem;
+        background: #ddd;
+        color: #565757;
+        cursor: pointer;
+        &:hover {
+        background: #565757;
+        color: #ddd;
+
+        }
+    }
+}

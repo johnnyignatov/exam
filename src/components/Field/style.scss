@@ -1,0 +1,97 @@
+.field-item {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: .5rem 0 .5rem 0;
+    border: 1px solid #ddd;
+    margin: .5rem;
+    color: #eee!important; 
+    &>.tooltip {
+        margin: 0 0 .2rem .2rem; 
+        &>.tooltiptext {
+            width: 7rem;
+        }
+        &>.tooltiptext-bottom {
+            top: calc(100% + 2px);
+        }
+    }
+    &[data-hidden="true"] {
+        padding: 0 .5rem 0 0;
+        & textarea.field-input {
+            padding: .2rem 1rem !important;
+        }
+        &:nth-of-type(n+2) {
+            padding-bottom: 1rem;
+        }
+    }
+}
+
+.field-title {
+    margin-bottom: 0.5rem; 
+    text-transform: uppercase;
+    color: inherit;
+}
+
+.field-icon {
+    cursor: default;
+}
+
+.field-valid {
+    position: absolute;
+    right: -8px;
+    bottom: 1.2rem;
+    display: none !important;
+    color: green;
+    font-weight: 700;
+}
+
+.field-invalid {
+    position: absolute;
+    right: -8px;
+    bottom: 1.2rem;
+    display: none !important;
+    color: red;
+    font-weight: 700;
+}
+
+.field-input {
+    margin-bottom: 0 !important;
+    padding: 0 1rem !important;
+    font-size: inherit !important;
+    line-height: 1; 
+    background: transparent;
+    border: none !important;
+    box-shadow: none !important;
+    flex-basis: 100%;
+    color: #eee!important;
+    &:disabled {
+        color: initial !important;
+    }
+    &::placeholder {
+        font-size: .8rem;
+        line-height: 1.8;
+        text-transform: uppercase;
+        color: #ccc;
+    }
+    &:focus {
+        outline: none;
+    }
+    &:required:focus {
+        &:valid {
+            &+.field-valid {
+                display: block;
+            }
+        }
+        &:invalid {
+            &+i+.field-invalid {
+                display: block;
+            }
+        }
+    }
+}
+
+textarea.field-input {
+    padding: .5rem 1rem !important;
+    line-height: 1.5;
+}
